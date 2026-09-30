@@ -1,10 +1,11 @@
 
 
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Labyrinthe</title>
+    <title></title>
 
     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
   </head>
@@ -30,6 +31,14 @@
 
         <!-- Texture du plafond -->
         <img id="texture-plafond" src="texture_plafond.avif">
+<video
+    id="video-fond"
+    src="video-fond.mp4"
+    autoplay
+    loop
+    muted
+    playsinline>
+  </video>
 
       </a-assets>
 
@@ -174,12 +183,20 @@
       </a-plane>
 
 
-     
+
+
+   <!-- CAMERA -->
+        <a-entity camera="active: true" look-controls wasd-controls="acceleration: 5" position="-1.251 0.858 -1.492">
+          <a-entity  light="type: point; color: #fc037b; intensity: 1; distance: 2; decay: 2" ></a-entity>
+        </a-entity>
+
+        <!-- LUMIERE AMBIANTE -->
+        <a-entity light="type: ambient; color: #fc037b; intensity: 0.104" ></a-entity>
+     <a-entity light="color: #18e7e7; intensity: 0.454; type: point; decay: 1.69"></a-entity>
       <!-- CIEL                               -->
-      
-
-      <a-sky color="#141010"></a-sky>
-
+    
+      <!-- <a-sky color="#141010"></a-sky> -->
+<a-sky src="#video-fond"></a-sky>
 
     </a-scene>
 
